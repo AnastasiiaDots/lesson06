@@ -13,8 +13,6 @@ let guessfunc = function () {
 
         } if (userNum == randomNum) {
             alert('Поздравляю, Вы угадали!!!');
-
-
         } else if (userNum < randomNum) {
             alert('Загаданное число меньше');
             userNum = + prompt('Введите число');
