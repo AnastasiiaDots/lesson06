@@ -1,28 +1,47 @@
 'use strict'
 
-function guessfunc(randomNum) {
+function guessfunc() {
     function res() {
-        randomNum = Math.floor(Math.random() * 100) + 1;
 
-        let userNum = prompt('Угадай число от 1 до 100', 'Введите число');
+        const randomNum = Math.floor(Math.random() * 100) + 1;
 
-        if (isNaN(userNum)) {
-            alert('Введи число!');
+        let userNum = + prompt('Угадай число от 1 до 100');
 
-        } if (userNum === null) {
-            alert('Игра окончена');
+        // if (isNaN(userNum)) {
+        //     alert('Введи число!');
 
-        } if (userNum == randomNum) {
-            alert('Поздравляю, Вы угадали!!!');
-        } else if (userNum < randomNum) {
-            alert('Загаданное число меньше');
-            userNum = + prompt('Введите число');
-            res();
-        } else if (userNum > randomNum) {
-            alert('Загаданное число больше');
-            userNum = +prompt('Введите число');
-            res();
+        // } else if (userNum === null) {
+        //     alert('Игра окончена');
+
+        // } else if (userNum == randomNum) {
+        //     alert('Поздравляю, Вы угадали!!!');
+
+        // } else if (userNum < randomNum) {
+        //     alert('Загаданное число больше');
+        //     res();
+        // } else if (userNum > randomNum) {
+        //     alert('Загаданное число меньше');
+        //     res();
+        // }
+        switch (true) {
+            case userNum < randomNum:
+                alert('Загаданное число меньше');
+                res();
+                break;
+            case userNum > randomNum:
+                alert('Загаданное число больше');
+                res();
+                break;
+            case userNum == randomNum:
+                alert('Поздравляю, Вы угадали!!!');
+                break;
+            case isNaN(userNum):
+                alert('Введи число!');
+                break;
+            case userNum === null:
+                alert('Игра окончена');
         }
+
     }
     res()
 }
