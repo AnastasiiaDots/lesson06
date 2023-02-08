@@ -5,14 +5,13 @@ function guessfunc() {
     const randomNum = Math.floor(Math.random() * 100) + 1;
     function res() {
 
-        let userNum = + prompt('Угадай число от 1 до 100');
+        let userNum = prompt('Угадай число от 1 до 100');
 
         switch (true) {
 
-            case !isNaN(userNum === null):
+            case userNum === null:
                 alert('Игра окончена');
                 break;
-
             case isNaN(userNum):
                 alert('Введи число!');
                 res();
@@ -25,13 +24,9 @@ function guessfunc() {
                 alert('Загаданное число больше');
                 res();
                 break;
-
             case userNum == randomNum:
                 alert('Поздравляю, Вы угадали!!!');
-
-
         }
-
     }
     res()
 }
